@@ -64,7 +64,7 @@ to cooperatively completely cover the ROI.
 
 #### How to run the code:
 Poly2Waypoints.java contains an example mission for a specific polygon ROI that produces coverage paths for three vehicles.
-In the code there are some lines commented, that can be used to skip some information such as the:
+In the code there are some lines commented, that can be used to skip some information, such as the:
 - Obstacles
 - Specific initial positions
 - User-defined percentages for the area allocation
