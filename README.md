@@ -64,13 +64,13 @@ to cooperatively completely cover the ROI.
 
 #### How to run the code:
 Poly2Waypoints.java contains an example mission for a specific polygon ROI that produces coverage paths for three vehicles.
-In the code there are some lines commented, that can be used to skip some information. The code can run with or without:
+In the code there are some lines commented, that can be used to skip some information such as the:
 - Obstacles
 - Specific initial positions
 - User-defined percentages for the area allocation
 
-"missionWaypoints" variable contains the coverage paths that are generated for all three vehicles, for the giver ROI and
-mission's specifications. In the resources folder you can find a map where you can create polygons over a map and copy the
+"missionWaypoints" variable contains the coverage paths that are generated for all three vehicles, for the given ROI and
+mission's specifications. In the resources folder you can also find a map where you can create polygons over a map and copy the
 WGS84 coordinates and a Matlab code that can be used to visualize ROI's with obstacles and the generated paths. These two
 simple tools can be used for experimentation with the code.
 
