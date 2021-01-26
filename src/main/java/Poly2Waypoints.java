@@ -63,7 +63,7 @@ public class Poly2Waypoints {
                 mission.waypointsDARP(droneNo, scanningDensity, polygon, obstacles, pathsStrictlyInPoly);
             }
         }
-//        mission.printWaypointsWGS84();
+        mission.printWaypointsWGS84();
 
         ArrayList<ArrayList<double[]>> missionWaypoints = mission.getMissionWaypointsWGS84();
         //--------------------------------------------------------------------------------------------------------------
