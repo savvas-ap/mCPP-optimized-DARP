@@ -37,42 +37,52 @@ the methodology more efficient
 The figure below shows the data pipeline of the back-end mCPP module.
 ![Back-end architecture](backend.jpg)
 
+
+### Input/Output:
 The algorithm receives as input the following:
+- The number of robots/vehicles
+- The desired scanning density (scanning density corresponds to the desired distance between two sequential trajectories in meters)
 - A polygon Region of Interest (ROI), formatted in WGS84 coordinate system
 - A set of obstacles (polygons formatted in WGS84 coordinate system) inside the ROI (optional)
-- The desired scanning density (scanning density corresponds to the desired distance between two sequential trajectories in meters)
-- The number of robots/vehicles
-- The initial positions of the vehicles (optional - if not provided, random will be used instead)
-- The desired percentages for proportional area allocation (optional - if not provided, equal will be used instead)
-- A boolean variable named pathsStrictlyInPoly (default true), to select mode between (paths strictly in poly/better coverage)
+- A boolean variable named pathsStrictlyInPoly, to select mode between (paths strictly in poly/better coverage)
+- The initial positions of the vehicles (optional - if not provided, random will be used instead | Note that the number 
+  of the initial positions should always be the same as the number of robots/vehicles)
+- The desired percentages for proportional area allocation (optional - if not provided, equal will be used instead | Note
+  that the number of the percentages should always be the same as the number of robots/vehicles and their sum should be 1)
 
-After that, the algorithm performs the following tasks, as shown in the figure above:
-- Transformation of all WGS84 coordinates to a local NED system with a common reference point
-- Calculation of the optimal grid's placement, given the polygon ROI and the asked scanning density
-- Representation of the ROI on grid (every cell of the grid gets a status/tag of (i) robot, (ii) obstacle or (iii) free
-  space, that will be used for the area allocation and the path planning procedures)
-- Given the optimal ROI's representation on grid, DARP algorithm performs the area allocation. After this step each robot/vehicle
-gets assigned with an exclusive sub-region (part of the overall area) to cover
-- For each vehicle is created a coverage path inside its exclusive sub-region, utilizing STC (as a first step a MST is
-  generated and after that, a path that circumnavigates this MST is created / at this step is also performed the turns'
-  reduction procedure)
-- From the generated paths are selected only the turning points as waypoints for the robots/vehicles. These waypoints get
-  transformed back to WGS84 coordinates
-  
-And this way, the algorithm provides as output a set of waypoints (path), for each vehicle involved in the mission, in order
+As an output, the algorithm provides set of waypoints (path), for each vehicle involved in the mission, in order
 to cooperatively completely cover the ROI.
 
-#### How to run the code:
-Poly2Waypoints.java contains an example mission for a specific polygon ROI that produces coverage paths for three vehicles.
-In the code there are some lines commented, that can be used to skip some information, such as the:
-- Obstacles
-- Specific initial positions
-- User-defined percentages for the area allocation
+### Run the project:
+In the src/main/resources folder is included a JSON file, containing input parameters for an example mission with 3 vehicles.
+The input variables are included in the JSON with the same order as described above.
 
-"missionWaypoints" variable contains the coverage paths that are generated for all three vehicles, for the given ROI and
-mission's specifications. In the resources folder you can also find a map where you can create polygons over a map and copy the
-WGS84 coordinates and a Matlab code that can be used to visualize ROI's with obstacles and the generated paths. These two
-simple tools can be used for experimentation with the code.
+#### 1st way: run the jar file
 
-Finally, for everyone who wants to intervene with this code, the src/main/java/pathPlanning/darp/DARPinPoly.java file, along
-with the method's architecture figure, are a good starting point.
+
+In the out/artifacts/mCPP_optimized_DARP_jar you can find the project packed in a jar file. The jar expects as an input the path
+for a JSON file as the one included in the resources. To run the jar from its current location with the json in the resources folder
+run:
+---
+
+java -jar mCPP-optimized-DARP.jar "../../../src/main/resources/inputVariables.json"
+
+---
+
+#### 2nd way: run the Main.java
+
+The Main class of the project expects as argument the path for such a JSON file as well. To run the main with the JSON file provided
+in the resources folder run:
+---
+
+"src/main/resources/inputVariables.json".
+
+---
+
+#### 3rd way: run the Poly2Waypoints.java
+In the src/test.java folder you can find the Poly2Waypoints class. In this class you can find the definition of some example
+input variables to run the project, with the same order as described above.
+
+#### Additional tools
+A simple map tool where you can create polygons over a map and copy the coordinates, and a simple matlab code to visualize
+the output of this project are also included in the "src/main/resources/" folder.
