@@ -71,9 +71,11 @@ the output of this project are also included in the "src/main/resources/" folder
 
 
 ### Cite as:
-```bash
+
+```
 S. D. Apostolidis, P. Ch. Kapoutsis, A. Ch. Kapoutsis, E. B. Kosmatoupoulos,
 “Cooperative Multi-UAV Coverage Mission Planning Platform for Remote Sensing Applications”,
 “Autonomous Robots”, Under Review
 ```
+
 
