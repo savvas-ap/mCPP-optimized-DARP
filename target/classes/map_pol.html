@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Polygon on map</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #controls {
+	    position: absolute;
+	    bottom: .5%;
+	    left: .1%;
+	    height: 25px;
+	    width: 1000px;
+	    z-index: 99;
+	  }
+
+	  #info {
+	    color: #222;
+	    height: 23px;
+	  }
+
+    </style>
+  </head>
+
+  <body style="background-color:black">
+    <div id="map"></div>
+    <div id="controls", align="left">
+    	<button id="set_poly" onclick="set_poly()">Initialize/Reset Scan Area</button>
+		<button id="clipboard-btn" onclick="getPolygonCoords()">Copy Coordinates</button>
+	</div>
+
+    <script>
+    var poly;
+    var map;
+
+      // Initialize Map
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: {lat: 40.933702, lng: 24.412381},
+          streetViewControl: false,
+          mapTypeId: 'satellite'
+        });
+
+        // Center in the current location
+        if (navigator.geolocation) {
+	       navigator.geolocation.getCurrentPosition(function (position) {
+	         initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	         map.setCenter(initialLocation);
+	       })
+        }
+      }
+
+     // Set/Reset Polygon
+  	 function set_poly(){
+		   // Define polygon coordinates around the map center
+	       initialLocation=map.center;
+	       Coords = [
+				{lat: initialLocation.lat()-.0015, lng: initialLocation.lng()-.002},
+ 			    {lat: initialLocation.lat()-.0015, lng: initialLocation.lng()+.002},
+	            {lat: initialLocation.lat()+.0015, lng: initialLocation.lng()+.002},
+	            {lat: initialLocation.lat()+.0015, lng: initialLocation.lng()-.002},
+	       ];
+
+	       if (poly!=null){
+	       	poly.setMap(null);
+	       }
+
+	       poly = new google.maps.Polygon({
+	          paths: Coords,
+	          strokeColor: '#00CCCC',
+	          strokeOpacity: 0.8,
+	          strokeWeight: 2,
+	          fillColor: '#003333',
+	          fillOpacity: 0.2,
+	  		  draggable: true,
+			  editable: true
+	       });
+	       poly.setMap(map);
+	 }
+
+	 // Copy Coordinates
+	 function copyToClipboard(text){
+	    var dummy = document.createElement("input");
+	    document.body.appendChild(dummy);
+	    dummy.setAttribute('value', text);
+	    dummy.select();
+	    document.execCommand("copy");
+	    document.body.removeChild(dummy);
+	 }
+
+	 function getPolygonCoords() {
+	   var len = poly.getPath().getLength();
+	   var htmlStr = "";
+	   for (var i = 0; i < len; i++) {
+	     htmlStr += " " + poly.getPath().getAt(i).toUrlValue(5);
+	   }
+
+	   a=String(htmlStr);
+	   copyToClipboard(a);
+	 }
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrFkoy3GLop2K12MeTHY0hwwvj8M_LToY&callback=initMap">
+    </script>
+  </body>
+</html>
