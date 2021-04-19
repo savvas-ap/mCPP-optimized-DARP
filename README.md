@@ -63,21 +63,19 @@ The input variables are included in the JSON with the same order as described ab
 In the out/artifacts/mCPP_optimized_DARP_jar you can find the project packed in a jar file. The jar expects as an input the path
 for a JSON file as the one included in the resources. To run the jar from its current location with the json in the resources folder
 run:
----
 
+```bash
 java -jar mCPP-optimized-DARP.jar "../../../src/main/resources/inputVariables.json"
-
----
+```
 
 #### 2nd way: run the Main.java
 
 The Main class of the project expects as argument the path for such a JSON file as well. To run the main with the JSON file provided
 in the resources folder run:
----
 
+```bash
 "src/main/resources/inputVariables.json".
-
----
+```
 
 #### 3rd way: run the Poly2Waypoints.java
 In the src/test.java folder you can find the Poly2Waypoints class. In this class you can find the definition of some example
