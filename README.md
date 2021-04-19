@@ -7,7 +7,7 @@ The implemented algorithm is optimized in order to efficiently cope with real-li
 optimization scheme based on [simulated annealing](https://www.researchgate.net/publication/6026283_Optimization_by_Simulated_Annealing) algorithm.
 The overall methodology achieves state-of-the-art performance in mCPP problem (see comparison with simulated evaluation [here](https://github.com/savvas-ap/cpp-simulated-evaluations)).
 
-An on-line instance of an end-to-end mission planner utilizing this mCPP module can be found here: [ http://choosepath.ddns.net:9001/ ].
+An on-line instance of an end-to-end mission planner utilizing this mCPP module can be found here: http://choosepath.ddns.net:9001/
 
 ![Mission examples](cover.png)
 
