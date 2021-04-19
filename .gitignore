@@ -21,7 +21,7 @@
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 
-tagert/
+target/
 
 # Gradle
 .idea/**/gradle.xml
