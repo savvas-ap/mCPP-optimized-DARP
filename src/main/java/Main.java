@@ -96,13 +96,6 @@ public class Main {
                     rPortions = new double[]{};
                 }
 
-
-
-
-
-
-                System.out.println();
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
