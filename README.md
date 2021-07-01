@@ -9,7 +9,7 @@ The overall methodology achieves state-of-the-art performance in mCPP problem (s
 
 An on-line instance of an end-to-end mission planner utilizing this mCPP module can be found here: http://choosepath.ddns.net:9001/
 
-In addition, [here](https://www.youtube.com/watch?v=JQrqt1dS4A8) you can find a demonstrative video of the platform, including examples of missions'
+In addition, a demonstrative video of the platform can be found [here](https://www.youtube.com/watch?v=JQrqt1dS4A8), including examples of missions'
 creation, management and execution, real-life operations, and indicative results that can be acquired.
 
 ![Mission examples](cover.png)
