@@ -59,8 +59,8 @@ java -jar mCPP-optimized-DARP.jar "../../../src/main/resources/inputVariables.js
 
 ### 2nd way: run the Main.java
 
-The Main class of the project expects as argument the path for such a JSON file as well. To run the main with the JSON file provided
-in the resources folder run:
+The Main class of the project expects as argument the path for such a JSON file as well. You can find the JSON file needed to run the main
+in the resources folder, as shown below:
 
 ```
 "src/main/resources/inputVariables.json"
