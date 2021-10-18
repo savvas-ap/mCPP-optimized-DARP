@@ -35,11 +35,11 @@ public class Kruskal {
                     if (mode == 0) {
                         cost2 = rows - i;
                     } else if (mode == 1) {
-                        cost2 = i;
+                        cost2 = i+1;
                     } else if (mode == 2) {
                         cost1 = cols - j;
                     } else if (mode == 3) {
-                        cost1 = j;
+                        cost1 = j+1;
                     }
 
                     if (i>0 && A[i-1][j]) {AddToAllEdges(i*cols+j, (i-1)*cols+j, cost1);}
