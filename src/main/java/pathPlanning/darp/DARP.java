@@ -304,7 +304,7 @@ public class DARP {
 
 
         for (int r = 0; r < nr; r++) {
-            if (Math.abs(DesireableAssign[r] - ArrayOfElements[r]) >= thres || !ConnectedRobotRegions[r]) {
+            if (Math.abs(DesireableAssign[r] - ArrayOfElements[r]) > thres || !ConnectedRobotRegions[r]) {
                 return false;
             }
         }
