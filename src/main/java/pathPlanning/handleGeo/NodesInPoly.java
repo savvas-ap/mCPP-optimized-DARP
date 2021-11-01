@@ -318,16 +318,26 @@ public class NodesInPoly {
 
     public double getPolygonArea(){
 
-        double area = 0;
-        int numPoints = polygonCoordinates.length;
-        int j = numPoints - 1; // The last vertex is the 'previous' one to the first
-
-        for (int i=0; i<numPoints; i++)
-        { area = area +  Math.abs((polygonCoordinates[j][0]+polygonCoordinates[i][0]) * (polygonCoordinates[j][1]-polygonCoordinates[i][1]));
-            j = i;  //j is previous vertex to i
+        double sum = 0;
+        for (int i = 0; i < polygonCoordinates.length ; i++)
+        {
+            if (i == 0)
+            {
+                sum += polygonCoordinates[i][0] * (polygonCoordinates[i + 1][1] - polygonCoordinates[polygonCoordinates.length - 1][1]);
+            }
+            else if (i == polygonCoordinates.length - 1)
+            {
+                sum += polygonCoordinates[i][0] * (polygonCoordinates[0][1] - polygonCoordinates[i - 1][1]);
+            }
+            else
+            {
+                sum += polygonCoordinates[i][0] * (polygonCoordinates[i + 1][1] - polygonCoordinates[i - 1][1]);
+            }
         }
 
-        return area/2;
+        double area = 0.5 * Math.abs(sum);
+        return area;
+
     }
 
 }
