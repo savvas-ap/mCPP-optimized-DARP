@@ -113,6 +113,8 @@ public class NodesInPoly {
                         InPolygon.check(new double[]{subNodes[2 * i][2 * j][0], subNodes[2 * i][2 * j][1]}, polygonCoordinates) &&
                         InPolygon.check(new double[]{subNodes[2 * i + 1][2 * j][0], subNodes[2 * i + 1][2 * j][1]}, polygonCoordinates)) {
 
+                    megaNodes[i][j][2] = 0;
+                    megaNodesCount++;
                     checkInPolyAndObstacle(i, j);
 
                 } else {
@@ -223,16 +225,10 @@ public class NodesInPoly {
                         InPolygon.check(new double[]{subNodes[2 * i][2 * j][0], subNodes[2 * i][2 * j][1]}, cartObst[k]) ||
                         InPolygon.check(new double[]{subNodes[2 * i + 1][2 * j][0], subNodes[2 * i + 1][2 * j][1]}, cartObst[k])) {
                     megaNodes[i][j][2] = 1;
-                } else if (megaNodes[i][j][2] != 1){
-                    megaNodes[i][j][2] = 0;
-                    megaNodesCount++;
+                    megaNodesCount--;
                 }
             }
-        } else if (megaNodes[i][j][2] != 1){
-            megaNodes[i][j][2] = 0;
-            megaNodesCount++;
         }
-
     }
 
     public double getOptimizationIndex(){
