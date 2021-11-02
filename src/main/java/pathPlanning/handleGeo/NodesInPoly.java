@@ -241,8 +241,8 @@ public class NodesInPoly {
 //        b = 0;
 //        c = 0;
 
-        double polygonArea = getPolygonArea();
-
+//        double polygonArea = getPolygonArea();
+        double polygonArea = getPolygonAreaWithoutObstacles();
 
         double nodesInTerm = (megaNodesCount * Math.pow(nodeDistance,2))/polygonArea;
         double minBBAreaTerm = polygonArea/getBoundingBoxArea();
@@ -336,4 +336,33 @@ public class NodesInPoly {
 
     }
 
+    public double getPolygonAreaWithoutObstacles(){
+
+        double polygonArea = getPolygonArea();
+
+        double obstaclesArea = 0;
+        if (cartObst.length > 0) {
+            for (int k=0; k<cartObst.length; k++){
+                double sum = 0;
+                for (int i = 0; i < cartObst[k].length; i++) {
+                    if (i == 0)
+                    {
+                        sum += cartObst[k][i][0] * (cartObst[k][i + 1][1] - cartObst[k][cartObst[k].length - 1][1]);
+                    }
+                    else if (i == cartObst[k].length - 1)
+                    {
+                        sum += cartObst[k][i][0] * (cartObst[k][0][1] - cartObst[k][i - 1][1]);
+                    }
+                    else
+                    {
+                        sum += cartObst[k][i][0] * (cartObst[k][i + 1][1] - cartObst[k][i - 1][1]);
+                    }
+                }
+                obstaclesArea += 0.5 * Math.abs(sum);
+            }
+        }
+
+        return polygonArea - obstaclesArea;
+
+    }
 }
