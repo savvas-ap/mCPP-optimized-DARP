@@ -74,6 +74,20 @@ input variables to run the project, with the same order as described above.
 A simple map tool where you can create polygons over a map and copy the coordinates, and a simple matlab code to visualize
 the output of this project are also included in the "src/main/resources/" folder.
 
+## Relevant/useful material:
+Platform's demonstrative [video](https://www.youtube.com/watch?v=JQrqt1dS4A8)
+
+Platform's on-line hosted [instance](http://choosepath.ddns.net:9001/)
+
+Paper's results [repo](https://github.com/savvas-ap/cpp-simulated-evaluations)
+
+DARP original Java implementaion [repo](https://github.com/athakapo/DARP)
+
+DARP recent Python implementaion [repo](https://github.com/alice-st/DARP)
+
+DARP [paper](https://kapoutsis.info/wp-content/uploads/2017/02/j3.pdf)
+
+DARP [Medium article](https://medium.com/@athanasios.kapoutsis/darp-divide-areas-algorithm-for-optimal-multi-robot-coverage-path-planning-2fed77b990a3)
 
 ## Cite as:
 
