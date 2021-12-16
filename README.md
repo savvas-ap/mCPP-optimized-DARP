@@ -81,9 +81,9 @@ Platform's on-line hosted [instance](http://choosepath.ddns.net:9001/)
 
 Paper's results [repo](https://github.com/savvas-ap/cpp-simulated-evaluations)
 
-DARP original Java implementaion [repo](https://github.com/athakapo/DARP)
+DARP original Java implementation [repo](https://github.com/athakapo/DARP)
 
-DARP recent Python implementaion [repo](https://github.com/alice-st/DARP)
+DARP recent Python implementation [repo](https://github.com/alice-st/DARP)
 
 DARP [paper](https://kapoutsis.info/wp-content/uploads/2017/02/j3.pdf)
 
