@@ -77,7 +77,7 @@ the output of this project are also included in the "src/main/resources/" folder
 ## Relevant/useful material:
 Platform's demonstrative [video](https://www.youtube.com/watch?v=JQrqt1dS4A8)
 
-Platform's on-line hosted [instance](http://choosepath.ddns.net:9001/)
+Platform's on-line hosted [instance](http://choosepath.ddns.net)
 
 Paper's results [repo](https://github.com/savvas-ap/cpp-simulated-evaluations)
 
