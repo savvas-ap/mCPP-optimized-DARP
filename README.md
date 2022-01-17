@@ -2,7 +2,7 @@
 
 ## Description
 The project in this repository is a multi-robot coverage path planning (mCPP) module, utilizing [STC](https://link.springer.com/article/10.1023/A:1016610507833) 
-and [DARP](https://github.com/athakapo/DARP).
+and [DARP](https://github.com/athakapo/DARP). This work has been presented, evaluated and tested in the [Autonomous Robots](https://link.springer.com/article/10.1007%2Fs10514-021-10028-3) journal.
 The implemented algorithm is optimized in order to efficiently cope with real-life multi-UAV coverage missions, utilizing a novel 
 optimization scheme based on [simulated annealing](https://www.researchgate.net/publication/6026283_Optimization_by_Simulated_Annealing) algorithm.
 The overall methodology achieves state-of-the-art performance in mCPP problem (see comparison with simulated evaluation [here](https://github.com/savvas-ap/cpp-simulated-evaluations)).
@@ -78,6 +78,8 @@ the output of this project are also included in the "src/main/resources/" folder
 Platform's demonstrative [video](https://www.youtube.com/watch?v=JQrqt1dS4A8)
 
 Platform's on-line hosted [instance](http://choosepath.ddns.net)
+
+Article's [page](https://link.springer.com/article/10.1007%2Fs10514-021-10028-3)
 
 Paper's results [repo](https://github.com/savvas-ap/cpp-simulated-evaluations)
 
