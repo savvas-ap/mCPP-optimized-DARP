@@ -92,12 +92,16 @@ DARP [Medium article](https://medium.com/@athanasios.kapoutsis/darp-divide-areas
 ## Cite as:
 
 ```
-@article{Apostolidis_2022, doi = {10.1007/s10514-021-10028-3}, 
-url = {https://doi.org/10.1007%2Fs10514-021-10028-3}, year = 2022, month = {jan},	
-publisher = {Springer Science and Business Media {LLC}},	
-author = {Savvas D. Apostolidis and Pavlos Ch. Kapoutsis and Athanasios Ch. Kapoutsis and Elias B. Kosmatopoulos},	
-title = {Cooperative multi-{UAV} coverage mission planning platform for remote sensing applications},	
-journal = {Autonomous Robots}}
+@article{Apostolidis_2022,
+	doi = {10.1007/s10514-021-10028-3},
+	url = {https://doi.org/10.1007%2Fs10514-021-10028-3},
+	year = 2022, 
+	month = {jan},	
+	publisher = {Springer Science and Business Media {LLC}}, 
+	author = {Savvas D. Apostolidis and Pavlos Ch. Kapoutsis and Athanasios Ch. Kapoutsis and Elias B. Kosmatopoulos},	
+	title = {Cooperative multi-{UAV} coverage mission planning platform for remote sensing applications}, 
+	journal = {Autonomous Robots}
+}
 ```
 
 
