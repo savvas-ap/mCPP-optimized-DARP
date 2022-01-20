@@ -81,6 +81,8 @@ Platform's on-line hosted [instance](http://choosepath.ddns.net)
 
 Article's [page](https://link.springer.com/article/10.1007%2Fs10514-021-10028-3)
 
+arXiv [page](https://arxiv.org/abs/2201.07030)
+
 Paper's results [repo](https://github.com/savvas-ap/cpp-simulated-evaluations)
 
 DARP original Java implementation [repo](https://github.com/athakapo/DARP)
