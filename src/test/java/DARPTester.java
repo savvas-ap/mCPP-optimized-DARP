@@ -10,14 +10,14 @@ public class DARPTester {
         // -------------------------------------------------------------------------------------------------------------
         //                                                 DARP parameters
         // -------------------------------------------------------------------------------------------------------------
-        int droneNo = 3;                        // #UAVs
+        int droneNo = 4;                        // #UAVs
         boolean notEqualPortions = false;       // # For proportional area allocation --> true
         double[] Rportions = new double[]{};    // When proportional area allocation is asked, provide portions
 
 
         // Grid size
-        int l = 50;
-        int m = 50;
+        int l = 20;
+        int m = 20;
 
 
         // Grid that will be given as input to DARP
@@ -56,9 +56,10 @@ public class DARPTester {
 
 
         //initial positions of drone(s)
-        DARPgrid[0][0] = 2;
-        DARPgrid[40][20] = 2;
-        DARPgrid[0][49] = 2;
+        DARPgrid[0][1] = 2;
+        DARPgrid[2][10] = 2;
+        DARPgrid[3][16] = 2;
+        DARPgrid[4][3] = 2;
 
 
         // Parameters to run DARP
@@ -103,7 +104,8 @@ public class DARPTester {
             return;
         }
 
-        System.out.println("Assignment matrix: \n");
+        System.out.println("\nTotal iterations needed: "+problem.getIter());
+        System.out.println("\nAssignment matrix: ");
         for (int i=0; i<l; i++){
             for (int j=0; j<m; j++){
                 System.out.print(DARPAssignmentMatrix[i][j]+" ");

@@ -27,6 +27,7 @@ public class DARP {
     private boolean canceled;
     private boolean UseImportance;
     private double[] Rportions, DesireableAssign;
+    private int totalIter = 0;
 
     public DARP(int r, int c, int[][] src, int iters, double vWeight, double rLevel, int discr, boolean imp, double[] Rportions) {
         this.rows = r;
@@ -202,7 +203,9 @@ public class DARP {
                 }
 
                 iter++;
+                totalIter++;
             }
+
 
             if (iter >= maxIter) {
                 maxIter = maxIter / 2;
@@ -214,6 +217,11 @@ public class DARP {
         elapsedTime = (double) (System.nanoTime() - startTime) / Math.pow(10, 9);
         calculateRobotBinaryArrays();
     }
+
+    public int getIter() {
+        return totalIter;
+    }
+
 
     private void calculateRobotBinaryArrays() {
         BinrayRobotRegions = new ArrayList<>();
