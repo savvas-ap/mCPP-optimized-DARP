@@ -41,6 +41,8 @@ public class DARPinPoly {
         this.pathsStrictlyInPoly = pathsStrictlyInPoly;
         this.geo = geo;
 
+        long start1 = System.nanoTime();
+
         // Convert WGS84 to NED coordinates
         ConvCoords missionDARP = new ConvCoords();
         missionDARP.polygonWGS84ToNED(geo); // Convert geographical to local cartesian coordinates
@@ -370,6 +372,9 @@ public class DARPinPoly {
         missionWaypointsWGS84 = missionDARP.getWaypointsWGS84();
 
         printWaypointsNum(missionWaypointsWGS84);
+
+        System.out.println("Overall execution time: " + (System.nanoTime() - start1) / 1000000000.0f + " seconds");
+
 //        printWaypointsNED();
 //        printWaypointsWGS84();
     }
